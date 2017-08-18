@@ -6,10 +6,10 @@ $children = $xml->Document->Folder->children();
 
 
 foreach ($children as $child) {
- if (isset($child->LookAt)) {
+ if (isset($child->name)) {
   $name = $child->name;
-  $lat = $child->LookAt->latitude;
-  $lng = $child->LookAt->longitude;
+  $coords = $child->Point->coordinates;
+  list ($lng, $lat) = explode(",", $coords);
 
   print "addMarker($lat, $lng, '$name');\n";
  }
