@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ADS-B Towers</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta charset="utf-8">
+		<style>
+			/* Always set the map height explicitly to define the size of the div
+			* element that contains the map. */
+			#map {
+				height: 100%;
+			}
+			/* Optional: Makes the sample page fill the window. */
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script>
+			var map;
+			function addMarker(marker_lat, marker_lng, marker_name) {
+				var marker = new google.maps.Marker({
+					position: {lat: marker_lat, lng: marker_lng},
+					map: map,
+					title: marker_name
+				});
+			}
+
+			function initMap() {
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: {lat: 39.774769, lng: -98.041992},
+					zoom: 3
+				});
+			}
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZvD_3DP2OlA1erutf47u-0Kj6Osp05M&callback=initMap" async defer></script>
+	</body>
+</html>
