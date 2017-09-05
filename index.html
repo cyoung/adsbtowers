@@ -67,6 +67,9 @@
 				font-size: 15px;
 				font-weight: 300;
 				margin-left: 12px;
+				margin-top: 10px;
+				padding-top: 4px;
+				padding-bottom: 4px;
 				padding: 0 11px 0 13px;
 				text-overflow: ellipsis;
 				width: 400px;
@@ -96,6 +99,7 @@
 			function addMarker(marker_lat, marker_lng, marker_name) {
 				var image = {
 					url: 'antenna-64x64.png', // image is 64x64.
+					scaledSize: new google.maps.Size(32, 32)
 				}; 
 
 				var marker = new google.maps.Marker({
